@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/styles.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Event Planner</h1>
+    <textarea id="query" placeholder="Enter your event type..."></textarea>
+    <button onclick="planEvent()">Plan Event</button>
+    <p id="response"></p>
+
+    <script>
+        function planEvent() {
+            const query = document.getElementById('query').value.toLowerCase();
+            const responses = {
+                "birthday party": "Plan a superhero-themed birthday party with costumes, a cake, and fun games for kids.",
+                "team-building event": "Organize an outdoor team-building event with trust exercises, obstacle courses, and collaborative problem-solving activities.",
+                "wedding": "Plan a wedding with a beautiful outdoor ceremony, floral decorations, and a dinner reception with live music."
+            };
+
+            const response = responses[query] || "I'm sorry, I don't have a response for that event type.";
+            document.getElementById('response').innerText = response;
+        }
+    </script>
+    <script src="static/script.js"></script>
+
+</body>
+</html>
